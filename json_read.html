@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <title>READ JSON</title>
+ <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+ <script type="text/javascript">
+ $(document).ready(function() {
+ $.getJSON("http://jsonplaceholder.typicode.com/posts",function(result){
+ $.each(result, function(i, field){
+ $("#list").append("<li>UserID: "+ field.userId + " </br>ID: "+field.id +" </br>Title:"+field.title+"</br>Body: "+field.body +"</br></li>");
+ });
+ });
+ });
+ </script>
+</head>
+<body>
+ <div id="output">
+ 	<ul id="list">
+ 		
+
+ 	</ul>
+ 	<a href="index.html"> <- Back </a>
+ </div>
+</body>
+</html>

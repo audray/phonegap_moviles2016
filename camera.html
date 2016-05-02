@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+<script type="text/javascript" src="cordova.js"></script>
+  <script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript">
+
+
+
+function take_pic(){
+  //alert("Clicked!");
+  navigator.camera.getPicture(onSuccess, onFail, { quality: 70,  destinationType: Camera.DestinationType.FILE_URI });
+  //alert("Clicked!");
+}
+
+function onSuccess(imageURI){
+  var image= document.getElementById('cameraPic');
+
+  image.src= imageURI;
+  image.style.display= 'block';
+}
+
+function onFail(message) {
+  alert(message);
+}
+
+</script>
+<title>HTML5, CSS3 and JavaScript demo</title>
+</head>
+<body>
+<!-- Start your code here -->
+<div id="camera" style="text-align: center;">
+   <input type="button" onClick="take_pic()" value="Take a picture"></input>
+ 
+    <div style="text-align:center;margin:20px;">
+        <img id="cameraPic" src="" style="display: none; width: 260px; height:260px;"></img>
+
+        <p style="font-size: 10px"> P.S.: sometimes you need to take the picture twice.</p>
+
+        <a href="index.html"> <- Back </a>
+    </div>
+
+
+<!-- End your code here -->
+</body>
+</html>
